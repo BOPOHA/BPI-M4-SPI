@@ -2,7 +2,6 @@ BPI-M4 As-Is Noncommercial License, version 1
 Copyright (c) 2026 Anatolii Vorona.
 
 Applies only to these independently authored files:
-  docs/EXTRACTION.md
   docs/BOOT-CONTRACT.md
 
 Permission is granted to use and copy the covered work, unchanged, solely for
