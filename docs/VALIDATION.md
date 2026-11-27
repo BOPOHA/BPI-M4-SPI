@@ -1,8 +1,17 @@
-Local extraction validation, 2026-11-27
+Independent SPI extraction validation, 2026-11-27
 
-4 independent regression tests passed. C harnesses ran in a fresh regular-user Mock buildroot; the standalone
-checks SRPM built successfully.
+Four retained C fault harness tests passed in the SPI-only Mock checks SRPM.
+The complete standalone SPI SRPM/RPM build then passed U-Boot compilation,
+reference packer/crypto comparisons, retained vendor DDR/FSBL checks, raw layout,
+and the exact 112-byte secondary-entry and relocation/disassembly checks.
+See SPI-BUILD-2026-11-27.json for the source and artifact identities.
 
-Python and Bash syntax checked. Remote publication, real migrated kernel/SPI
-builds, native aarch64 devel module compilation and a new hardware boot are
-pending. The historical working evidence does not qualify changed artifacts.
+The build uses no OS sources, Linux patches or image receipts. U-Boot's official
+GitHub mirror supplied the pinned commit after the canonical server's lazy fetch
+stalled. Git probing disables lazy fetching for existence checks; exact commit
+fetches still pin all archived source. Linux/mailbox compatibility is unchanged.
+
+Artifacts under out/spi are raw build candidates, not private full-chip backups.
+No device was written and changed artifacts have not booted on hardware. Keep
+private backups outside this checkout and cleanup paths. Vendor binary release
+rights must be reviewed before publicly uploading firmware artifacts.

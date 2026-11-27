@@ -4,4 +4,5 @@ Historical checkout and all ignored build products were left intact.
 Upstream archives, RPMs, images and private chip dumps are not tracked.
 Remote destination: https://github.com/BOPOHA/BPI-M4-SPI.
 COPR destination: vorona/bpi-m4 (fedora-45-aarch64).
-Authentication and native COPR/hardware qualification are pending.
+GitHub repository created and main pushed. Native COPR/hardware qualification
+is tracked in docs/VALIDATION.md.

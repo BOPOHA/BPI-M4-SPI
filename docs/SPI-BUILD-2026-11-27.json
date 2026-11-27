@@ -1,0 +1,69 @@
+{
+  "uboot": {
+    "version": "v2027.01-rc3",
+    "revision": "ee1b3477e3af6af1ae9b8f98bc84d2cc6f32a3a6"
+  },
+  "vendor": {
+    "revision": "25f5b88ec4ba34029f964693dc34028b26e6c67c"
+  },
+  "dram_gib": 2,
+  "srpm_sha256": "47cceb0981b44a51112ee75a2de277a015b12e025a6f572eba4695e2c8a6d000",
+  "rpm_sha256": "5670e1427d298259c7dfb561fadc5caff02018e33b8c63fc1c15ece54851e116",
+  "build_tools": [
+    "openssl-libs-1:4.0.3-1.fc45.x86_64",
+    "binutils-2.47-1.fc45.x86_64",
+    "gcc-16.2.1-3.fc45.x86_64",
+    "gcc-c++-16.2.1-3.fc45.x86_64",
+    "binutils-aarch64-linux-gnu-2.47-1.fc45.x86_64",
+    "gcc-aarch64-linux-gnu-16.2.1-1.fc45.x86_64",
+    "gcc-plugin-annobin-16.2.1-3.fc45.x86_64",
+    "openssl-devel-1:4.0.3-1.fc45.x86_64",
+    "openssl-1:4.0.3-1.fc45.x86_64"
+  ],
+  "layout": {
+    "format": "RTD1395 vendor SPI boot region",
+    "bytes": 539152,
+    "factory_offset": 2097152,
+    "hardware_validated": false,
+    "segments": [
+      {
+        "name": "arm-rom",
+        "offset": 0,
+        "bytes": 91896,
+        "sha256": "edda59e18466e8d23f879c42973c7f16b63cd80940acea655314e991e94757c5"
+      },
+      {
+        "name": "mips-rom",
+        "offset": 192512,
+        "bytes": 872,
+        "sha256": "cfac7a6cf9a33de310270dc05bb07d5b6ec6286c50d764c91681e7bff613e312"
+      },
+      {
+        "name": "header",
+        "offset": 198656,
+        "bytes": 96,
+        "sha256": "4791ac4123d0e8383d4ac9b6da565ff68cef549c8ca5af8074c4baf64725381d"
+      },
+      {
+        "name": "hwsettings",
+        "offset": 198752,
+        "bytes": 2952,
+        "sha256": "3318d415ec07d54c7e27a9f2d578ac83b2d5492e5c5705b8df42508a5b11a8fd"
+      },
+      {
+        "name": "uboot",
+        "offset": 201704,
+        "bytes": 306208,
+        "sha256": "4d76e470f177f8d2e7102054c17b9a54ebb28a20a69ae4c8157685d62f1a68c8"
+      },
+      {
+        "name": "fsbl",
+        "offset": 507912,
+        "bytes": 31240,
+        "sha256": "cd201712e767b8de74fe421b9fedde1fe3f31255115a174012fc7e3050716228"
+      }
+    ]
+  },
+  "hardware_flashed": false,
+  "hardware_validated": false
+}
