@@ -3,7 +3,7 @@ export PATH := $(CURDIR)/scripts/rpm-tools:$(PATH)
 export PYTHONDONTWRITEBYTECODE := 1
 JOBS ?= 8
 SPI_DRAM_GIB ?= 2
-.PHONY: help spi srpm-spi spi-vendor srpm-spi-vendor test clean clean-hard
+.PHONY: help spi srpm-spi spi-vendor srpm-spi-vendor test checks clean clean-hard
 help:
 	@echo 'make spi / srpm-spi / spi-vendor / test; no OS/image build or flashing'
 spi:

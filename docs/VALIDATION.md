@@ -15,3 +15,13 @@ Artifacts under out/spi are raw build candidates, not private full-chip backups.
 No device was written and changed artifacts have not booted on hardware. Keep
 private backups outside this checkout and cleanup paths. Vendor binary release
 rights must be reviewed before publicly uploading firmware artifacts.
+
+Python dependency review, 2026-11-27
+
+Removed the unused python3-pyyaml BuildRequires from the SPI checks SPEC.
+The maintained tests use only the Python standard library. Regular-user
+`make checks` rebuilt bpi-m4-spi-checks-1-1.c854423fe421.fc45 successfully in Mock;
+all four compiled controller regressions passed. Host `make test` lacked a C
+compiler, so no host packages were installed and the Mock run supplied it.
+Upstream U-Boot Python build dependencies and Bash/C firmware tooling remain.
+See PYTHON-TOOLING.md. No firmware or device was changed by this review.

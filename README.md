@@ -18,3 +18,6 @@ artifact inherits hardware qualification automatically.
 Licensing: extracted code retains GPL/LGPL and imported notices. Selected new
 standalone files use [As-Is Noncommercial terms](licenses/As-Is-Noncommercial.txt).
 See [license scope](LICENSE.md).
+
+See [Python tooling review](docs/PYTHON-TOOLING.md) for retained build/test roles
+and removed dependencies.
