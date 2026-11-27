@@ -1,0 +1,10 @@
+/cache/
+/work/
+/out/
+__pycache__/
+*.pyc
+.pytest_cache/
+/config/authorized_keys
+/config/local.yaml
+/config/local-*.yaml
+/.idea/

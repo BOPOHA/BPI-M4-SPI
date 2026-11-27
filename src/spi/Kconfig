@@ -1,0 +1,23 @@
+if TARGET_BPI_M4_FC
+config BPI_M4_SPI
+    bool
+    default y
+    select GICV2
+config BPI_M4_RAM_SIZE
+    hex "Installed RAM size (must match the packaged DDR settings)"
+    default 0x80000000
+config SYS_BOARD
+    default "bpi-m4-fc"
+config SYS_VENDOR
+    default "bananapi"
+config SYS_CONFIG_NAME
+    default "bpi-m4-fc"
+config TEXT_BASE
+    default 0x00100000
+config HAS_CUSTOM_SYS_INIT_SP_ADDR
+    default y
+config CUSTOM_SYS_INIT_SP_ADDR
+    default 0x02080000
+config SYS_LOAD_ADDR
+    default 0x20000000
+endif

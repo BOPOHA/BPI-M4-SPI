@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+/dts-v1/;
+/ {
+    compatible = "bananapi,bpi-m4", "realtek,rtd1395";
+    model = "Banana Pi M4 modern SPI loader";
+    #address-cells = <1>;
+    #size-cells = <1>;
+    aliases { serial0 = &uart0; mmc0 = &sd; };
+    chosen { stdout-path = "serial0:115200n8"; };
+    memory@100000 { device_type = "memory"; reg = <0x100000 0x7ff00000>; };
+    uart0: serial@98007800 {
+        compatible = "ns16550a";
+        reg = <0x98007800 0x100>;
+        reg-shift = <2>;
+        reg-io-width = <4>;
+        clock-frequency = <27000000>;
+        status = "okay";
+    };
+    sd: mmc@98010400 {
+        compatible = "bananapi,bpi-m4-fc-sd";
+        reg = <0x98010400 0x400>;
+        bus-width = <1>;
+        max-frequency = <25000000>;
+        non-removable;
+        status = "okay";
+    };
+};

@@ -1,0 +1,12 @@
+# Install on the ext4 root at /boot/extlinux/extlinux.conf.
+# Paths are relative to the filesystem root. Keep older labels for rollback.
+DEFAULT current
+TIMEOUT 30
+MENU TITLE Banana Pi M4
+
+LABEL current
+    MENU LABEL Board kernel (replace VERSION with the installed release)
+    LINUX /boot/bpi-m4/VERSION/Image
+    INITRD /boot/bpi-m4/VERSION/initramfs.img
+    FDT /boot/bpi-m4/VERSION/board.dtb
+    APPEND earlycon=uart8250,mmio32,0x98007800 console=ttyS0,115200 root=${bpi_root} rootfstype=ext4 rw rdinit=/init ${bpi_sd_args}

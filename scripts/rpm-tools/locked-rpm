@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-2.0-or-later
+# RPM6 keyring dotlocks do not coordinate our independent PID namespaces.
+set -euo pipefail
+tool=$1
+shift
+case "$tool" in rpm|rpmkeys) ;; *) exit 64 ;; esac
+repo=$(cd -- "$(dirname -- "$0")/../.." && pwd)
+for argument in "$@"; do
+    if [[ $argument == "$repo/cache/rpmdb" || $argument == "--dbpath=$repo/cache/rpmdb" ]]; then
+        mkdir -p -- "$repo/cache/rpmdb"
+        exec flock "$repo/cache/rpmdb/.build-verify.lock" "/usr/bin/$tool" "$@"
+    fi
+done
+# Host queries and independently composed target databases use normal RPM.
+exec "/usr/bin/$tool" "$@"

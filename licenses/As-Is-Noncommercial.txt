@@ -1,0 +1,15 @@
+BPI-M4 As-Is Noncommercial License, version 1
+Copyright (c) 2026 Anatolii Vorona.
+
+Applies only to these independently authored files:
+  docs/EXTRACTION.md
+  docs/BOOT-CONTRACT.md
+
+Permission is granted to use and copy the covered work, unchanged, solely for
+noncommercial purposes, retaining this notice. Modification, derivative works,
+sublicensing, sale, and commercial use are prohibited without separate written
+permission from the copyright holder. No trademark or patent rights are granted.
+The work is provided AS IS, without warranty; to the extent permitted by law,
+the copyright holder is not liable for claims, damages or other liability.
+Third-party works and existing GPL/LGPL-covered code are expressly excluded.
+This is a custom source-available license, not an open-source license.

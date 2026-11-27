@@ -1,0 +1,22 @@
+Subject: [PATCH] Use the RTD1395 32-bit secondary-core mailbox
+
+The existing SPI firmware releases secondary cores through a 32-bit MMIO
+mailbox. Keep the upstream 64-bit protocol for all other boards.
+
+Protocol provenance: Realtek GPL BSP, arch/arm/cpu/armv8/start.S.
+See docs/PROVENANCE.md for the pinned source reference and attribution.
+
+--- a/arch/arm/cpu/armv8/start.S
++++ b/arch/arm/cpu/armv8/start.S
+@@ -199,7 +199,11 @@
+ slave_cpu:
+ 	wfe
+ 	ldr	x1, =CPU_RELEASE_ADDR
++#ifdef CONFIG_TARGET_BPI_M4_FC
++	ldr	w0, [x1]
++#else
+ 	ldr	x0, [x1]
++#endif
+ 	cbz	x0, slave_cpu
+ 	br	x0			/* branch to the given address */
+ #endif /* CONFIG_ARMV8_MULTIENTRY */

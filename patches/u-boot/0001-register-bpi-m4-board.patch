@@ -1,0 +1,28 @@
+Subject: [PATCH] Register the original RTD1395 Banana Pi M4 board
+
+Select the ARM64 device-model configuration and source the board Kconfig.
+The board implementation is shipped separately in the source inputs.
+
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -1095,6 +1095,14 @@
+ 	select OF_CONTROL
+ 	select ENV_RELOC_GD_ENV_ADDR
+ 	imply CMD_DM
++
++config TARGET_BPI_M4_FC
++    bool "Original Banana Pi M4 with existing SPI DDR firmware"
++    select ARM64
++    select DM
++    select DM_SERIAL
++    select OF_CONTROL
++    select SYS_NS16550
+ 
+ config ARCH_QEMU
+ 	bool "QEMU Virtual Platform"
+@@ -2478,3 +2486,5 @@
+ source "arch/arm/Kconfig.debug"
+ 
+ endmenu
++
++source "board/bananapi/bpi-m4-fc/Kconfig"
